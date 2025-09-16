@@ -8,6 +8,16 @@
     color: #fff !important;
 }
 
+.svg-color {
+    color: #fff;
+    background-color: #0a165e;
+}
+
+.svg-color:hover {
+    background-color: #2b4dff !important;
+    color: #fff !important;
+}
+
 .bg-text-color {
     color: #0a165e !important;
 }
@@ -120,18 +130,15 @@
             transition: all 0.3s ease;
         } */
 
-/* .Container {
-    border-end-end-radius: 15%;
-    border-end-start-radius: 0%;
-    border-start-end-radius: 0%;
-    border-start-start-radius: 15%;
+.Container {
+    border-end-end-radius: 7px;
+    border-end-start-radius: 7px;
+    border-start-end-radius: 7px;
+    border-start-start-radius: 7px;
     border: 0px;
-    padding: 15px;
-} */
+    padding: 10px 12px 10px 12px ;
+} 
 
-/* .Container:hover {
-    border: 1px solid #2b4dff;
-} */
 
 /* SVG wrapper default */
 .svg-bg {
@@ -600,8 +607,8 @@ textarea.form-control:focus {
 }
 
 
-/* Replace Bootstrap accordion chevron with + and - only inside #accordions */
-#accordion .accordion-button::after {
+/* Replace Bootstrap accordion chevron with + and - only inside #faqaccordions */
+#faqaccordions .accordion-button::after {
     background-image: none !important;
     content: '+';
     font-weight: bold;
@@ -614,28 +621,55 @@ textarea.form-control:focus {
     transform: none !important;
 }
 
-#accordion .accordion-button:not(.collapsed)::after {
+#faqaccordions .accordion-button:not(.collapsed)::after {
     content: '-';
-    color: #fff;
-    /* light when active */
+    color: var(--bs-primary);
+    /* primary when active */
 }
 
 /* Default (closed) state */
-#accordion .accordion-button {
-    background-color: #f0f0f0 !important;
+#faqaccordions .accordion-button {
+    background-color: #f8f9fa !important;
     color: #0a165e !important;
 }
 
-/* Active (opened) state */
-#accordion .accordion-button:not(.collapsed) {
-    background-color: var(--bs-primary) !important;
-    color: var(--bs-light) !important;
+/* Active (opened) state → only text changes */
+#faqaccordions .accordion-button:not(.collapsed) {
+    /* background-color: #f0f0f0 !important; */
+    /* keep same background */
+    color: var(--bs-primary) !important;
+    /* text-primary */
 }
 
 /* Accordion body (content area) */
-#accordion .accordion-collapse .accordion-body {
-    background-color: #f0f0f0;
-    /* closed look */
+#faqaccordions .accordion-collapse .accordion-body {
+    /* background-color: #f0f0f0; */
     color: #0a165e;
 }
 
+/* Remove default Bootstrap background */
+.faq-accordion .accordion-button {
+    background: none;
+    box-shadow: none !important;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #0a165e;
+    padding: 3rem 0;
+}
+
+.faq-accordion .accordion-button:not(.collapsed)::after {
+    transform: rotate(180deg);
+}
+
+.faq-accordion .accordion-body {
+    color: #6c757d;
+    padding: 0.5rem 0 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.faq-accordion .accordion-item {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+}
